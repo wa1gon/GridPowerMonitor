@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 
 class Program
 {
+    static DateTime lastHeartBeat = DateTime.MinValue;
     static async Task Main(string[] args)
     {
         var host = Host.CreateDefaultBuilder(args)
@@ -58,6 +59,7 @@ class Program
             {
                 var receivedBytes = udpClient.Receive(ref endPoint);
                 var receivedMessage = Encoding.UTF8.GetString(receivedBytes);
+                lastHeartBeat = DateTime.Now;
                 Console.WriteLine($"{DateTime.Now}: {endPoint}: {receivedMessage}");
             }
         }
