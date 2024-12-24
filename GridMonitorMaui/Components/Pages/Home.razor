@@ -1,0 +1,30 @@
+﻿@page "/"
+@using System.Timers
+
+<h1>Device Status</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Last Update</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var device in devices)
+    {
+        <tr>
+            <td>@device.Key</td>
+            <td>@device.Value.LastUpdate</td>
+            <td>
+                @{
+                    var status = GetDeviceStatus(device.Value);
+                    var icon = GetStatusIcon(status);
+                }
+                <span>@((MarkupString)icon) @status</span>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
