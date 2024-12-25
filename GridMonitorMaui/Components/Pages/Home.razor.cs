@@ -6,12 +6,16 @@ using System.Text;
 class DeviceInfo
 {
     public DateTime LastUpdate { get; set; }
+    public TimeSpan Uptime { get; set; }
+    public DateTime? DarkStart { get; set; }
+    public DateTime? DarkEnd { get; set; }
 }
 
 public partial class Home
 {
     DateTime lastHeartBeat = DateTime.MinValue;
     private Dictionary<string, DeviceInfo> devices = new Dictionary<string, DeviceInfo>();
+    private List<string> darkPeriodsLog = new List<string>();
 
     public Home()
     {
@@ -20,22 +24,51 @@ public partial class Home
 
     private void UdpListener()
     {
-        using (var udpClient = new UdpClient(9123))
+        using (var udpClient = new UdpClient(9124))
         {
-            var endPoint = new IPEndPoint(IPAddress.Any, 9123);
-            Console.WriteLine("Listening for UDP broadcasts on port 9123...");
+            var endPoint = new IPEndPoint(IPAddress.Any, 9124);
+            Console.WriteLine("Listening for UDP broadcasts on port 9124...");
 
             while (true)
             {
                 var receivedBytes = udpClient.Receive(ref endPoint);
                 var receivedMessage = Encoding.UTF8.GetString(receivedBytes);
-                var deviceName = receivedMessage; // Assuming the message contains the device name
-
-                InvokeAsync(() =>
+                var parts = receivedMessage.Split('|');
+                if (parts.Length == 2)
                 {
-                    devices[deviceName] = new DeviceInfo { LastUpdate = DateTime.Now };
-                    StateHasChanged();
-                });
+                    var deviceName = parts[0];
+                    var uptime = TimeSpan.Parse(parts[1]);
+
+                    InvokeAsync(() =>
+                    {
+                        if (!devices.ContainsKey(deviceName))
+                        {
+                            devices[deviceName] = new DeviceInfo { LastUpdate = DateTime.Now, Uptime = uptime };
+                        }
+                        else
+                        {
+                            var device = devices[deviceName];
+                            var timeSinceLastUpdate = DateTime.Now - device.LastUpdate;
+
+                            if (timeSinceLastUpdate > TimeSpan.FromSeconds(3))
+                            {
+                                if (device.DarkStart == null)
+                                {
+                                    device.DarkStart = device.LastUpdate;
+                                }
+                                device.DarkEnd = DateTime.Now;
+                                darkPeriodsLog.Add($"{deviceName} was dark from {device.DarkStart} to {device.DarkEnd}");
+                                device.DarkStart = null;
+                                device.DarkEnd = null;
+                            }
+
+                            device.LastUpdate = DateTime.Now;
+                            device.Uptime = uptime;
+                        }
+
+                        StateHasChanged();
+                    });
+                }
             }
         }
     }
@@ -43,7 +76,7 @@ public partial class Home
     private string GetDeviceStatus(DeviceInfo deviceInfo)
     {
         var timeSinceLastUpdate = DateTime.Now - deviceInfo.LastUpdate;
-        if (timeSinceLastUpdate < TimeSpan.FromMinutes(2))
+        if (timeSinceLastUpdate < TimeSpan.FromMinutes(3))
         {
             return "Online";
         }

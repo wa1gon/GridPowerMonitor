@@ -8,23 +8,33 @@
     <tr>
         <th>Name</th>
         <th>Last Update</th>
+        <th>Uptime</th>
         <th>Status</th>
     </tr>
     </thead>
     <tbody>
-    @foreach (var device in devices)
-    {
-        <tr>
-            <td>@device.Key</td>
-            <td>@device.Value.LastUpdate</td>
-            <td>
-                @{
-                    var status = GetDeviceStatus(device.Value);
-                    var icon = GetStatusIcon(status);
-                }
-                <span>@((MarkupString)icon) @status</span>
-            </td>
-        </tr>
-    }
+        @foreach (var device in devices)
+        {
+            <tr>
+                <td>@device.Key</td>
+                <td>@device.Value.LastUpdate</td>
+                <td>@device.Value.Uptime</td>
+                <td>
+                    @{
+                        var status = GetDeviceStatus(device.Value);
+                        var icon = GetStatusIcon(status);
+                    }
+                    <span>@((MarkupString)icon) @status</span>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<h2>Dark Periods Log</h2>
+<ul>
+    @foreach (var log in darkPeriodsLog)
+    {
+            <li>@log</li>
+    }
+</ul>
