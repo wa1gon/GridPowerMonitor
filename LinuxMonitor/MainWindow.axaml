@@ -1,0 +1,17 @@
+<!-- xml -->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="LinuxMonitor.MainWindow"
+        Title="UDP Listener" Width="480" Height="220">
+    <StackPanel Margin="12" Spacing="8">
+        <TextBlock Text="Last UDP message:"/>
+        <TextBlock Text="{Binding LastMessage}" FontWeight="Bold" TextWrapping="Wrap"/>
+        <!-- <WrapPanel Spacing="8"> -->
+        <WrapPanel>
+            <TextBlock Text="From:"/>
+            <TextBlock Text="{Binding LastRemote}" FontWeight="Bold"/>
+            <TextBlock Text="At:" Margin="12,0,0,0"/>
+            <TextBlock Text="{Binding LastReceivedAt}" FontWeight="Bold"/>
+        </WrapPanel>
+    </StackPanel>
+</Window>

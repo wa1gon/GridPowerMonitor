@@ -1,0 +1,10 @@
+<!-- xml -->
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:fluent="clr-namespace:Avalonia.Themes.Fluent;assembly=Avalonia.Themes.Fluent"
+             x:Class="LinuxMonitor.App">
+    <Application.Styles>
+        <!-- <fluent:FluentTheme Mode="Light"/> -->
+        <StyleInclude Source="avares://Avalonia.Controls/Styles/Default.xaml"/>
+    </Application.Styles>
+</Application>

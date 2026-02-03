@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="LinuxMonitor/App.axaml" value="LinuxMonitor/LinuxMonitor.csproj" />
+        <entry key="LinuxMonitor/MainWindow.axaml" value="LinuxMonitor/LinuxMonitor.csproj" />
+        <entry key="LinuxMonitor/MainWindowViewModel.cs.axaml" value="LinuxMonitor/LinuxMonitor.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

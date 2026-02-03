@@ -1,12 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridPowerMonitor", "GridPowerMonitor\GridPowerMonitor.csproj", "{CFDB41F1-49B9-4770-A763-A593A844A99B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridMonitorGUI", "GridMonitorGUI\GridMonitorGUI.csproj", "{40547230-CC2F-4B65-B1C5-DAD36A113AA8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ESP32", "ESP32", "{C9F9E61A-9E78-4796-AFA0-C97CE64BB43A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridTestBroadcast", "gridTestBroadcast\gridTestBroadcast.csproj", "{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EspSupportUtils", "EspSupportUtils\EspSupportUtils.csproj", "{AF8EC855-3391-4141-B946-743FFEA6C97B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esp32Web", "Esp32Web\Esp32Web.csproj", "{A8712D16-6377-4C68-AADD-E7BCA33F7533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinuxMonitor", "LinuxMonitor\LinuxMonitor.csproj", "{F89A42FA-0415-40C0-8709-90170DA54033}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,13 +23,24 @@ Global
 		{CFDB41F1-49B9-4770-A763-A593A844A99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFDB41F1-49B9-4770-A763-A593A844A99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFDB41F1-49B9-4770-A763-A593A844A99B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40547230-CC2F-4B65-B1C5-DAD36A113AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40547230-CC2F-4B65-B1C5-DAD36A113AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40547230-CC2F-4B65-B1C5-DAD36A113AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40547230-CC2F-4B65-B1C5-DAD36A113AA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8EC855-3391-4141-B946-743FFEA6C97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8EC855-3391-4141-B946-743FFEA6C97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8EC855-3391-4141-B946-743FFEA6C97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8EC855-3391-4141-B946-743FFEA6C97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8712D16-6377-4C68-AADD-E7BCA33F7533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8712D16-6377-4C68-AADD-E7BCA33F7533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8712D16-6377-4C68-AADD-E7BCA33F7533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8712D16-6377-4C68-AADD-E7BCA33F7533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89A42FA-0415-40C0-8709-90170DA54033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89A42FA-0415-40C0-8709-90170DA54033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89A42FA-0415-40C0-8709-90170DA54033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89A42FA-0415-40C0-8709-90170DA54033}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
