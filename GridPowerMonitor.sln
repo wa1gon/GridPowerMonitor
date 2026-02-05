@@ -8,6 +8,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ESP32", "ESP32", "{C9F9E61A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridTestBroadcast", "gridTestBroadcast\gridTestBroadcast.csproj", "{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AvaloniaMonitor", "AvaloniaMonitor", "{60642DD7-3E63-470F-B22C-76C1A18F448E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaGridMonitor", "AvaloniaGridMonitor\AvaloniaGridMonitor.csproj", "{EC7860EF-8DC2-400B-AEF5-E486AFFF4A7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +30,12 @@ Global
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{036EA84C-1B36-4C37-AC39-7DB2B8C8980F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7860EF-8DC2-400B-AEF5-E486AFFF4A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7860EF-8DC2-400B-AEF5-E486AFFF4A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7860EF-8DC2-400B-AEF5-E486AFFF4A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7860EF-8DC2-400B-AEF5-E486AFFF4A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC7860EF-8DC2-400B-AEF5-E486AFFF4A7A} = {60642DD7-3E63-470F-B22C-76C1A18F448E}
 	EndGlobalSection
 EndGlobal

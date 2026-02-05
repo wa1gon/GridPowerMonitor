@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="AvaloniaGridMonitor/App.axaml" value="AvaloniaGridMonitor/AvaloniaGridMonitor.csproj" />
         <entry key="LinuxMonitor/App.axaml" value="LinuxMonitor/LinuxMonitor.csproj" />
         <entry key="LinuxMonitor/MainWindow.axaml" value="LinuxMonitor/LinuxMonitor.csproj" />
         <entry key="LinuxMonitor/MainWindowViewModel.cs.axaml" value="LinuxMonitor/LinuxMonitor.csproj" />
